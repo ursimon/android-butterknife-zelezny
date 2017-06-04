@@ -41,7 +41,7 @@ public class Entry extends JPanel {
         mGeneratedIDs = ids;
 
         mCheck = new JCheckBox();
-        mCheck.setPreferredSize(new Dimension(40, 26));
+        mCheck.setPreferredSize(new ResolutionDimension(40, 26));
         if (!mGeneratedIDs.contains(element.getFullID())) {
             mCheck.setSelected(mElement.used);
         } else {
@@ -50,17 +50,17 @@ public class Entry extends JPanel {
         mCheck.addChangeListener(new CheckListener());
 
         mEvent = new JCheckBox();
-        mEvent.setPreferredSize(new Dimension(100, 26));
+        mEvent.setPreferredSize(new ResolutionDimension(100, 26));
 
         mType = new JLabel(mElement.name);
-        mType.setPreferredSize(new Dimension(100, 26));
+        mType.setPreferredSize(new ResolutionDimension(100, 26));
 
         mID = new JLabel(mElement.id);
-        mID.setPreferredSize(new Dimension(100, 26));
+        mID.setPreferredSize(new ResolutionDimension(100, 26));
 
         mName = new JTextField(mElement.fieldName, 10);
         mNameDefaultColor = mName.getBackground();
-        mName.setPreferredSize(new Dimension(100, 26));
+        mName.setPreferredSize(new ResolutionDimension(100, 26));
         mName.addFocusListener(new FocusListener() {
             @Override
             public void focusGained(FocusEvent e) {
@@ -74,15 +74,15 @@ public class Entry extends JPanel {
         });
 
         setLayout(new BoxLayout(this, BoxLayout.LINE_AXIS));
-        setMaximumSize(new Dimension(Short.MAX_VALUE, 54));
+        setMaximumSize(new ResolutionDimension(Short.MAX_VALUE, 54));
         add(mCheck);
-        add(Box.createRigidArea(new Dimension(10, 0)));
+        add(Box.createRigidArea(new ResolutionDimension(10, 0)));
         add(mType);
-        add(Box.createRigidArea(new Dimension(10, 0)));
+        add(Box.createRigidArea(new ResolutionDimension(10, 0)));
         add(mID);
-        add(Box.createRigidArea(new Dimension(10, 0)));
+        add(Box.createRigidArea(new ResolutionDimension(10, 0)));
         add(mEvent);
-        add(Box.createRigidArea(new Dimension(10, 0)));
+        add(Box.createRigidArea(new ResolutionDimension(10, 0)));
         add(mName);
         add(Box.createHorizontalGlue());
 

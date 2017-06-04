@@ -74,7 +74,7 @@ public class EntryList extends JPanel {
             mGeneratedIDs.addAll(ids);
         }
 
-        setPreferredSize(new Dimension(640, 360));
+        setPreferredSize(new ResolutionDimension(640, 360));
         setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
 
         addInjections();
@@ -87,11 +87,11 @@ public class EntryList extends JPanel {
         contentPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
         mEntryHeader = new EntryHeader();
         contentPanel.add(mEntryHeader);
-        contentPanel.add(Box.createRigidArea(new Dimension(0, 5)));
+        contentPanel.add(Box.createRigidArea(new ResolutionDimension(0, 5)));
 
         JPanel injectionsPanel = new JPanel();
         injectionsPanel.setLayout(new BoxLayout(injectionsPanel, BoxLayout.PAGE_AXIS));
-        injectionsPanel.add(Box.createRigidArea(new Dimension(0, 5)));
+        injectionsPanel.add(Box.createRigidArea(new ResolutionDimension(0, 5)));
 
         int cnt = 0;
         boolean selectAllCheck = true;
@@ -100,7 +100,7 @@ public class EntryList extends JPanel {
             entry.setListener(singleCheckListener);
 
             if (cnt > 0) {
-                injectionsPanel.add(Box.createRigidArea(new Dimension(0, 5)));
+                injectionsPanel.add(Box.createRigidArea(new ResolutionDimension(0, 5)));
             }
             injectionsPanel.add(entry);
             cnt++;
@@ -112,7 +112,7 @@ public class EntryList extends JPanel {
         mEntryHeader.getAllCheck().setSelected(selectAllCheck);
         mEntryHeader.setAllListener(allCheckListener);
         injectionsPanel.add(Box.createVerticalGlue());
-        injectionsPanel.add(Box.createRigidArea(new Dimension(0, 5)));
+        injectionsPanel.add(Box.createRigidArea(new ResolutionDimension(0, 5)));
 
         JBScrollPane scrollPane = new JBScrollPane(injectionsPanel);
         contentPanel.add(scrollPane);
@@ -124,11 +124,11 @@ public class EntryList extends JPanel {
     protected void addButtons() {
         /*
 		mPrefixCheck = new JCheckBox();
-		mPrefixCheck.setPreferredSize(new Dimension(32, 26));
+		mPrefixCheck.setPreferredSize(new ResolutionDimension(32, 26));
 		mPrefixCheck.addChangeListener(new CheckPrefixListener());
 
 		mPrefixValue = new JTextField(Utils.getPrefix(), 10);
-		mPrefixValue.setPreferredSize(new Dimension(40, 26));
+		mPrefixValue.setPreferredSize(new ResolutionDimension(40, 26));
 
 		mPrefixLabel = new JLabel();
 		mPrefixLabel.setText("Field name prefix");
@@ -144,7 +144,7 @@ public class EntryList extends JPanel {
 		*/
 
         mHolderCheck = new JCheckBox();
-        mHolderCheck.setPreferredSize(new Dimension(32, 26));
+        mHolderCheck.setPreferredSize(new ResolutionDimension(32, 26));
         mHolderCheck.setSelected(mCreateHolder);
         mHolderCheck.addChangeListener(new CheckHolderListener());
 
@@ -160,7 +160,7 @@ public class EntryList extends JPanel {
         add(holderPanel, BorderLayout.PAGE_END);
 
         msplitOnclickMethodsCheck = new JCheckBox();
-        msplitOnclickMethodsCheck.setPreferredSize(new Dimension(32, 26));
+        msplitOnclickMethodsCheck.setPreferredSize(new ResolutionDimension(32, 26));
         msplitOnclickMethodsCheck.setSelected(false);
 
         final JLabel independentOnclickMethodsLabel = new JLabel();
@@ -176,13 +176,13 @@ public class EntryList extends JPanel {
 
         mCancel = new JButton();
         mCancel.setAction(new CancelAction());
-        mCancel.setPreferredSize(new Dimension(120, 26));
+        mCancel.setPreferredSize(new ResolutionDimension(120, 26));
         mCancel.setText("Cancel");
         mCancel.setVisible(true);
 
         mConfirm = new JButton();
         mConfirm.setAction(new ConfirmAction());
-        mConfirm.setPreferredSize(new Dimension(120, 26));
+        mConfirm.setPreferredSize(new ResolutionDimension(120, 26));
         mConfirm.setText("Confirm");
         mConfirm.setVisible(true);
 
@@ -191,7 +191,7 @@ public class EntryList extends JPanel {
         buttonPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
         buttonPanel.add(Box.createHorizontalGlue());
         buttonPanel.add(mCancel);
-        buttonPanel.add(Box.createRigidArea(new Dimension(10, 0)));
+        buttonPanel.add(Box.createRigidArea(new ResolutionDimension(10, 0)));
         buttonPanel.add(mConfirm);
 
         add(buttonPanel, BorderLayout.PAGE_END);
